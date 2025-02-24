@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import PostCard from './components/postcard'
 import './App.css'
 
 function App() {
@@ -30,10 +31,13 @@ function App() {
   ];
 
   return (
-    <>
-      
-    </>
-  )
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <h1>Social Media Feed</h1>
+      {initialPosts.map((post) => (
+        <PostCard key={post.id} {...post} />
+      ))}
+    </div>
+  );
 }
 
 export default App
